@@ -1,0 +1,16 @@
+title 0.6: New note
+
+Browser->Server: HTTP Get https://studies.cs.helsinki.fi/exampleapp/spa
+Server-->Browser: HTML code
+Browser->Server: HTTP Get https://studies.cs.helsinki.fi/exampleapp/main.css
+Server-->Browser: main.css
+Browser->Server: https://studies.cs.helsinki.fi/exampleapp/spa.js
+Server-->Browser: spa.js
+
+note over Browser: Browser starts executing js code that requires JSON data from server
+Browser->Server: HTTP Get https://studies.cs.helsinki.fi/exampleapp/data.json
+Server-->Browser:[{content: "meep", date: "2022-06-30T06:17:34.827Z"},…]
+
+note over Browser: Uses javaScript to render notes to display
+Browser->Server: HTTP Post https://studies.cs.helsinki.fi/exampleapp/new_note_spa
+note over Browser: Uses javaScript to render new notes to display rather than tradition way 
